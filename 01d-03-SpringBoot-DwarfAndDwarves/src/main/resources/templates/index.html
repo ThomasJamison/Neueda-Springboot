@@ -11,14 +11,14 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
 <style>
-th, td{
+th, td {
 	padding-top: 10px;
-    padding-right: 50px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    background-color: #e6e8ed;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	background-color: #e6e8ed;
+	
 }
-
 </style>
 <title th:text="${pageTitle}">Generic Page Title</title>
 </head>
@@ -27,19 +27,26 @@ th, td{
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
 
+
 	<div class="jumbotron" align="center">
-		<h2>Disney Dwarfs</h2>
+		<h2>Dwarf Emporium</h2>
+
 	</div>
+
+
+
 	<table class="tg" align="center">
 		<tr>
-			<th>Name</th>
-			<th>Image</th>
+			<th><a href="/disney">Disney dwarfs</a> </th>
+			<th><a href="/tolkien">Tolkien dwarves</a></th>
 		</tr>
-		<tr th:each="dwarf : ${dwarfs}">
-			<td th:text="${dwarf.name}">Happy</td>
-			<td><img src="../static/Happy.png" th:src="${dwarf.image}" width="100" height="150"></img></td>
+		<tr>
+			<td></td>
+			<td></td>
 		</tr>
 	</table>
+
+
 </body>
 
 </html>
