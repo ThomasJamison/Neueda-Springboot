@@ -9,9 +9,9 @@ import uk.ac.belfastmet.dwarfs.domain.Dwarf;
 @Service
 public class DwarfService
 {
-	
 
-	
+
+
 	public ArrayList<Dwarf> getDisneyDwarfs()
 	{
 		ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
