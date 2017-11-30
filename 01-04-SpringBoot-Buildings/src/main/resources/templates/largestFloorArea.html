@@ -31,13 +31,15 @@ th, td {
 
 	<table class="table table-striped">
 		<tr>
+			<th>Rank</th>
 			<th>Name</th>
 			<th>Image</th>
 			<th>Country</th>
 			<th>Floor Area (m<sup>2</sup>)
 			</th>
 		</tr>
-		<tr th:each="building : ${buildings}">
+		<tr th:each="building,iter : ${buildings}">
+			<td th:text="${iter.index} + 1"></td>
 			<td th:text="${building.name}"></td>
 			<td><img src="" th:src="${building.image}" width="200"
 				height="180"></img></td>
