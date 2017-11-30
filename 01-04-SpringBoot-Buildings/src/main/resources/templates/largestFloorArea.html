@@ -23,6 +23,34 @@ th, td {
 </head>
 <body>
 
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+
+	<div class="jumbotron" align="center">
+		<h2>Largest Buildings By Floor Area</h2>
+	</div>
+	<div align="center">
+		<h4>
+			<a href="/">Back to Main Page</a>
+		</h4>
+	</div>
+
+	<table class="tg" align="center">
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+			<th>Country</th>
+			<th>Floor Area (m<sup>2</sup>)
+			</th>
+		</tr>
+		<tr th:each="building : ${buildings}">
+			<td th:text="${building.name}"></td>
+			<td><img src="" th:src="${building.image}" width="200"
+				height="180"></img></td>
+			<td th:text="${building.country}"></td>
+			<td th:text="${building.size}"></td>
+		</tr>
+	</table>
+
 </body>
 
 </html>
