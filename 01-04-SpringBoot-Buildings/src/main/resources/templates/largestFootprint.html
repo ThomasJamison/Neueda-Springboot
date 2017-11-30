@@ -16,29 +16,24 @@ th, td {
 	padding-right: 50px;
 	padding-bottom: 10px;
 	padding-left: 50px;
-	background-color: #e6e8ed;
 }
 </style>
 <title th:text="${pageTitle}">Generic Page Title</title>
 </head>
 <body>
 
-	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<!-- Nav bar fragment with parameters -->
+	<nav th:replace="layouts/nav :: navFragment(main='', lrgFlrArea='', lrgFprArea='active', lrgUsbVolume='')"></nav>
 
 	<div class="jumbotron" align="center">
 		<h2>Largest Buildings By Footprint</h2>
 	</div>
-	<div align="center">
-		<h4>
-			<a href="/">Back to Main Page</a>
-		</h4>
-	</div>
-	<table class="tg" align="center">
+	<table class="table table-striped">
 		<tr>
 			<th>Name</th>
 			<th>Image</th>
 			<th>Country</th>
-			<th>Footprint (m<sup>2</sup>)
+			<th>Footprint Area (m<sup>2</sup>)
 			</th>
 		</tr>
 		<tr th:each="building : ${buildings}">
@@ -50,6 +45,11 @@ th, td {
 		</tr>
 	</table>
 
+	<div align="center">
+		<h5>
+			<a href="/">Back to Main Page</a>
+		</h5>
+	</div>
 
 </body>
 
