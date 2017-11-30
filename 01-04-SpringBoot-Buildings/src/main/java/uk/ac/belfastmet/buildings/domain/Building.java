@@ -5,13 +5,15 @@ public class Building
 
 	private String name;
 	private String country;
+	private String place;
 	private String size;
 	private String image;
 	
-	public Building (String name, String country, String size, String image)
+	public Building (String name, String country, String place, String size, String image)
 	{
 		this.name = name;
 		this.country = country;
+		this.place = place;
 		this.size = size;
 		this.image = image;
 		
@@ -35,6 +37,16 @@ public class Building
 	public void setCountry(String country)
 	{
 		this.country = country;
+	}
+	
+	public String getPlace()
+	{
+		return place;
+	}
+
+	public void setPlace(String place)
+	{
+		this.place = place;
 	}
 
 	public String getSize()

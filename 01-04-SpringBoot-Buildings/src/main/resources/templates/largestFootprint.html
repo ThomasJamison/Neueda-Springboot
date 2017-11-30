@@ -34,6 +34,7 @@ th, td {
 			<th>Name</th>
 			<th>Image</th>
 			<th>Country</th>
+			<th>Place</th>
 			<th>Footprint Area (m<sup>2</sup>)
 			</th>
 		</tr>
@@ -43,6 +44,7 @@ th, td {
 			<td><img src="" th:src="${building.image}" width="200"
 				height="180"></img></td>
 			<td th:text="${building.country}"></td>
+			<td th:text="${building.place}"></td>
 			<td th:text="${building.size}"></td>
 		</tr>
 	</table>
