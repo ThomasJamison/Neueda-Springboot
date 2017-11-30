@@ -16,7 +16,6 @@ public class Building
 		this.place = place;
 		this.size = size;
 		this.image = image;
-		
 	}
 
 	public String getName()
