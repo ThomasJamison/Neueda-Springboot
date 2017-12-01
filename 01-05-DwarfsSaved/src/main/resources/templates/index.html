@@ -16,34 +16,34 @@ th, td {
 	padding-right: 50px;
 	padding-bottom: 10px;
 	padding-left: 50px;
+	background-color: #e6e8ed;
 }
 </style>
 <title th:text="${pageTitle}">Generic Page Title</title>
 </head>
 <body>
 
-	<!-- Nav bar fragment with parameters -->
-	<nav
-		th:replace="layouts/nav :: navFragment(main='active', lrgFlrArea='', lrgFprArea='', lrgUsbVolume='')">
-	</nav>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+
 
 	<div class="jumbotron" align="center">
-		<h1>Largest Buildings In The World</h1>
+		<h2>Dwarf Emporium</h2>
+
 	</div>
 
-	<div align="center">
-		<h2>
-			<a href="/largestFloorArea">Largest Buildings By Floor Area</a>
-		</h2>
-		<br />
-		<h2>
-			<a href="/largestFootprint">Largest Buildings By Footprint</a>
-		</h2>
-		<br />
-		<h2>
-			<a href="/largestUsableVolume">Largest Buildings By Usable Volume</a>
-		</h2>
-	</div>
+
+
+	<table class="tg" align="center">
+		<tr>
+			<th><a href="/disney">Disney dwarfs</a></th>
+			<th><a href="/tolkien">Tolkien dwarves</a></th>
+		</tr>
+		<tr>
+			<td><img th:src="@{/Doc.png}" /></td>
+			<td><img th:src="@{/Balin.png}" /></td>
+		</tr>
+	</table>
+
 
 </body>
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<style>
+th, td {
+	padding-top: 10px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+}
+
+</style>
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+	<div class="jumbotron" align="center">
+		<h2>More</h2>
+	</div>
+	
+	<h3 align="center">3 Disney Dwarfs</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+		<tr th:each="dwarf : ${dwarfs1}">
+			<td th:text="${dwarf.name}"></td>
+			<td><img th:src="${dwarf.image}" width="100" height="150"></img></td>
+		</tr>
+	</table>
+	
+	<h3 align="center">Search for Sleepy</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+		<tr th:each="dwarf : ${dwarfs2}">
+			<td th:text="${dwarf.name}"></td>
+			<td><img th:src="${dwarf.image}" width="100" height="150"></img></td>
+		</tr>
+	</table>
+	
+	<h3 align="center">Search for ID 11</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+		<tr th:each="dwarf : ${dwarfs3}">
+			<td th:text="${dwarf.name}"></td>
+			<td><img th:src="${dwarf.image}" width="100" height="150"></img></td>
+		</tr>
+	</table>
+	
+	<h3 align="center">All Dwarfs By Name Ascending</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+		<tr th:each="dwarf : ${dwarfs4}">
+			<td th:text="${dwarf.name}"></td>
+			<td><img th:src="${dwarf.image}" width="100" height="150"></img></td>
+		</tr>
+	</table>
+	
+	<h3 align="center">All Disney Dwarves and Thorin</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+		<tr th:each="dwarf : ${dwarfs5}">
+			<td th:text="${dwarf.name}"></td>
+			<td><img th:src="${dwarf.image}" width="100" height="150"></img></td>
+		</tr>
+	</table>
+</body>
+
+</html>
