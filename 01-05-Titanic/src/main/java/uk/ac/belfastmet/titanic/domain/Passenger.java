@@ -5,35 +5,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Passenger
-{
+public class Passenger {
+	
 	@Id
 	@GeneratedValue
 	private Integer passengerId;
-	private Integer survived;
-	private Integer pclass;
+	private int survived;
+	private int pClass;
 	private String name;
 	private String sex;
-	private Float age;
-	private Integer sibSp;
-	private Integer parch;
+	private int age;
+	private int sibSp;
+	private int parch;
 	private String ticket;
-	private Float fare;
+	private double fare;
 	private String cabin;
 	private String embarked;
 	
-	public Passenger()
-	{
+	public Passenger() {
 		
 	}
 	
-	public Passenger(Integer passengerId, Integer survived, Integer pclass, String name, String sex,
-					 Float age, Integer sibSp, Integer parch, String ticket, Float fare, String cabin,
-					 String embarked)
-	{
+	public Passenger(Integer passengerId, int survived, int pClass, String name, String sex, int age, int sibSp,
+			int parch, String ticket, double fare, String cabin, String embarked) {
+		super();
 		this.passengerId = passengerId;
 		this.survived = survived;
-		this.pclass = pclass;
+		this.pClass = pClass;
 		this.name = name;
 		this.sex = sex;
 		this.age = age;
@@ -44,97 +42,103 @@ public class Passenger
 		this.cabin = cabin;
 		this.embarked = embarked;
 	}
-	
-	//getters and setters
-	public Integer getSurvived()
-	{
+
+	public Integer getPassengerId() {
+		return passengerId;
+	}
+
+	public void setPassengerId(Integer passengerId) {
+		this.passengerId = passengerId;
+	}
+
+	public int getSurvived() {
 		return survived;
 	}
-	public void setSurvived(Integer survived)
-	{
+
+	public void setSurvived(int survived) {
 		this.survived = survived;
 	}
-	public Integer getPclass()
-	{
-		return pclass;
+
+	public int getpClass() {
+		return pClass;
 	}
-	public void setPclass(Integer pclass)
-	{
-		this.pclass = pclass;
+
+	public void setpClass(int pClass) {
+		this.pClass = pClass;
 	}
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
-	public void setName(String name)
-	{
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSex()
-	{
+
+	public String getSex() {
 		return sex;
 	}
-	public void setSex(String sex)
-	{
+
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public Float getAge()
-	{
+
+	public int getAge() {
 		return age;
 	}
-	public void setAge(Float age)
-	{
+
+	public void setAge(int age) {
 		this.age = age;
 	}
-	public Integer getSibSp()
-	{
+
+	public int getSibSp() {
 		return sibSp;
 	}
-	public void setSibSp(Integer sibSp)
-	{
+
+	public void setSibSp(int sibSp) {
 		this.sibSp = sibSp;
 	}
-	public Integer getParch()
-	{
+
+	public int getParch() {
 		return parch;
 	}
-	public void setParch(Integer parch)
-	{
+
+	public void setParch(int parch) {
 		this.parch = parch;
 	}
-	public String getTicket()
-	{
+
+	public String getTicket() {
 		return ticket;
 	}
-	public void setTicket(String ticket)
-	{
+
+	public void setTicket(String ticket) {
 		this.ticket = ticket;
 	}
-	public Float getFare()
-	{
+
+	public double getFare() {
 		return fare;
 	}
-	public void setFare(Float fare)
-	{
+
+	public void setFare(double fare) {
 		this.fare = fare;
 	}
-	public String getCabin()
-	{
+
+	public String getCabin() {
 		return cabin;
 	}
-	public void setCabin(String cabin)
-	{
+
+	public void setCabin(String cabin) {
 		this.cabin = cabin;
 	}
-	public String getEmbarked()
-	{
+
+	public String getEmbarked() {
 		return embarked;
 	}
-	public void setEmbarked(String embarked)
-	{
+
+	public void setEmbarked(String embarked) {
 		this.embarked = embarked;
 	}
-	
 
+	
 	
 }

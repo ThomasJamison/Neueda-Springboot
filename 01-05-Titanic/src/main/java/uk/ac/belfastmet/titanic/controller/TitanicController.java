@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import uk.ac.belfastmet.titanic.domain.Passenger;
 import uk.ac.belfastmet.titanic.repositories.PassengerRepository;
 
 @Controller
@@ -18,6 +19,7 @@ public class TitanicController
 	
 	public TitanicController(PassengerRepository passengerRepository) 
 	{
+		super();
 		this.passengerRepository = passengerRepository;
 	}
 	
