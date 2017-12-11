@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<style>
+th, td {
+	padding-top: 10px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	background-color: #e6e8ed;
+}
+</style>
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+
+
+	<div class="jumbotron" align="center">
+		<h2>More Info</h2>
+
+	</div>
+
+
+	<h2>Children of the Titanic</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Survived</th>
+		</tr>
+		<tr th:each="passenger : ${passengersByAge}">
+			<td th:text="${passenger.name}"></td>
+			<td th:text="${passenger.age}"></td>
+			<td th:text="${passenger.survived}"></td>
+		</tr>
+	</table>
+	
+	<h2>Survivors of the Titanic</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Class</th>
+			<th>Survived</th>
+		</tr>
+		<tr th:each="passenger : ${passengersSurvived}">
+			<td th:text="${passenger.name}"></td>
+			<td th:text="${passenger.age}"></td>
+			<td th:text="${passenger.pClass}"></td>
+			<td th:text="${passenger.survived}"></td>
+		</tr>
+	</table>
+	
+	<h2>Deaths of the Titanic</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Class</th>
+			<th>Survived</th>
+		</tr>
+		<tr th:each="passenger : ${passengersDied}">
+			<td th:text="${passenger.name}"></td>
+			<td th:text="${passenger.age}"></td>
+			<td th:text="${passenger.pClass}"></td>
+			<td th:text="${passenger.survived}"></td>
+		</tr>
+	</table>
+
+
+
+</body>
+
+</html>
