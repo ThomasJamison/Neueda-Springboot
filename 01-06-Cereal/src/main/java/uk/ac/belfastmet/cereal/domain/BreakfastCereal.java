@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class BreakfastCereal
 {
@@ -11,8 +13,10 @@ public class BreakfastCereal
 	@Id
 	@GeneratedValue
 	private Integer cerealId;
+	@NotEmpty
 	private String manufacturer;
-	private String cereal;
+	@NotEmpty
+	private String cerealName;
 	private int energy;
 	private int calories;
 	private double protein;
@@ -30,13 +34,13 @@ public class BreakfastCereal
 		
 	}
 	
-	public BreakfastCereal(Integer cerealId, String manufacturer, String cereal, int energy, int calories,
+	public BreakfastCereal(Integer cerealId, String manufacturer, String cerealName, int energy, int calories,
 						   double protein, double carbohydrate, double sugars, double fat, double saturates,
 						   double fibre, String sodium, String salt, double iron)
 	{
 		this.cerealId = cerealId;
 		this.manufacturer = manufacturer;
-		this.cereal = cereal;
+		this.cerealName = cerealName;
 		this.energy = energy;
 		this.calories = calories;
 		this.protein = protein;
@@ -50,6 +54,16 @@ public class BreakfastCereal
 		this.iron = iron;
 	}
 	
+	public Integer getCerealId()
+	{
+		return cerealId;
+	}
+	
+	public void setCerealId(Integer cerealId)
+	{
+		this.cerealId=cerealId;
+	}
+	
 	public String getManufacturer()
 	{
 		return manufacturer;
@@ -60,14 +74,14 @@ public class BreakfastCereal
 		this.manufacturer = manufacturer;
 	}
 
-	public String getCereal()
+	public String getCerealName()
 	{
-		return cereal;
+		return cerealName;
 	}
 
-	public void setCereal(String cereal)
+	public void setCerealName(String cerealName)
 	{
-		this.cereal = cereal;
+		this.cerealName = cerealName;
 	}
 
 	public int getEnergy()

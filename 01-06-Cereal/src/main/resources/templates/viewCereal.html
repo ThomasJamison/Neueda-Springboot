@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron" align="center">
+		<h1 th:text="${cereal.cerealName}"></h1>
+		<h4 th:text="${cereal.manufacturer}"></h4>
+	</div>
+
+	<div class="container">
+<table class="table table-striped">
+
+
+
+			<tr>
+				<td><b>Cereal Name</b></td>
+				<td th:text="${cereal.cerealName}"></td>
+			</tr>
+			<tr>
+				<td><b>Manufacturer</b></td>
+				<td th:text="${cereal.manufacturer}"></td>
+			</tr>
+			<tr>
+				<td><b>Energy</b></td>
+				<td th:text="${cereal.energy}"></td>
+			</tr>
+			<tr>
+				<td><b>Calories</b></td>
+				<td th:text="${cereal.calories}"></td>
+			</tr>
+			<tr>
+				<td><b>Protein</b></td>
+				<td th:text="${cereal.protein}"></td>
+			</tr>
+			<tr>
+				<td><b>Carbohydrate</b></td>
+				<td th:text="${cereal.carbohydrate}"></td>
+			</tr>
+			<tr>
+				<td><b>Sugars</b></td>
+				<td th:text="${cereal.sugars}"></td>
+			</tr>
+			<tr>
+				<td><b>Fat</b></td>
+				<td th:text="${cereal.fat}"></td>
+			</tr>
+			<tr>
+				<td><b>Saturates</b></td>
+				<td th:text="${cereal.saturates}"></td>
+			</tr>
+			<tr>
+				<td><b>Fibre</b></td>
+				<td th:text="${cereal.fibre}"></td>
+			</tr>
+			<tr>
+				<td><b>Sodium</b></td>
+				<td th:text="${cereal.sodium}"></td>
+			</tr>
+			<tr>
+				<td><b>Salt</b></td>
+				<td th:text="${cereal.salt}"></td>
+			</tr>
+			<tr>
+				<td><b>Iron</b></td>
+				<td th:text="${cereal.iron}"></td>
+			</tr>
+
+
+		</table>
+
+	</div>
+
+
+</body>
+</html>
