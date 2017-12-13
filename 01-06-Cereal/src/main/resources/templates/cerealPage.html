@@ -17,7 +17,13 @@
 		<h1>All The Cereal</h1>
 	</div>
 
+	<div class="alert alert-success" role="alert" th:if="${message}">
+		<p th:text="${message}"></p>
+	</div>
+
+	
 	<div class="container">
+		<a class="btn btn-success" href="/cereal/add" role="button">Add New Cereal</a>
 		<table class="table table-striped">
 			<tr>
 				<th>Cereal Name</th>
@@ -27,12 +33,13 @@
 			<tr th:each="cereal : ${cereals}">
 				<td th:text="${cereal.cerealName}"></td>
 				<td th:text="${cereal.manufacturer}"></td>
-				<td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a>
-				<a href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a> 
-				<a href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a></td>
+				<td><a class="btn btn-primary" href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a>
+				<a class="btn btn-primary" href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a> 
+				<a class="btn btn-danger" href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a></td>
 			</tr>
 		</table>
-		<a class="btn btn-primary" href="/cereal/add" role="button">Add New</a>
+		<a class="btn btn-success" href="/cereal/add" role="button">Add New Cereal</a>
+		<br/>
 
 	</div>
 
