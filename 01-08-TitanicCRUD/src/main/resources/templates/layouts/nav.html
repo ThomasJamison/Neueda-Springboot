@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"
+		th:fragment="navFragment">
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/passengers">Passengers</a></li>
+			<li class="dropdown">
+                                   <button class="btn btn-secondary dropdown-toggle text-white blackBackGround" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         <span>More</span>
+                                  </button>
+                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                       <li><a class="dropdown-item" href="/more#children">Children of the Titanic</a></li>
+                                       <li><a class="dropdown-item" href="/more#survivors">Survivors of the Titanic</a></li>
+                                       <li><a class="dropdown-item" href="/more#deaths">Deaths of the Titanic</a></li>
+                                   </ul>
+                             </li>
+		</ul>
+		
+		
+		
+	
+	</nav>
+</body>
+</html>
+
+
+
