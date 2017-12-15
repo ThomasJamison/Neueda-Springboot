@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron" align="center">
+		<h1 th:text="${beneficiary.name}"></h1>
+		<h4 th:text="${beneficiary.installLocation}"></h4>
+	</div>
+
+	<div class="container">
+<table class="table table-striped">
+
+
+
+			<tr>
+				<td><b>Beneficiary Name</b></td>
+				<td th:text="${beneficiary.name}"></td>
+			</tr>
+			<tr>
+				<td><b>Application Date</b></td>
+				<td th:text="${beneficiary.applicationDate}"></td>
+			</tr>
+			<tr>
+				<td><b>Capacity</b></td>
+				<td th:text="${beneficiary.capacity}"></td>
+			</tr>
+			<tr>
+				<td><b>Install Location</b></td>
+				<td th:text="${beneficiary.installLocation}"></td>
+			</tr>
+			<tr>
+				<td><b>Payments</b></td>
+				<td th:text="'&pound;' + ${beneficiary.payments}"></td>
+			</tr>
+			<tr>
+				<td><b>Technology</b></td>
+				<td th:text="${beneficiary.technology}"></td>
+			</tr>
+
+
+
+		</table>
+
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron" align="center">
+		<h1></h1>
+	</div>
+
+	<div class="container">
+
+		<form class="form-horizontal" th:action="@{/save}"
+			th:object="${beneficiary}" method="post">
+			
+			
+			<!-- hidden field is important! -->
+			<input type="hidden" th:field="${beneficiary.beneficiaryId}" />
+			
+			
+			<br />
+			<div class="form-group">
+				<label class="col-md-2">Name</label>
+					<input type="text" class="form-control" th:field="${beneficiary.name}" />
+					<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+						th:class="help-block">Name Errors</span>
+
+			</div>
+
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Properties</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Application Date</td>
+						<td><input type="text" class="form-control"
+							th:field="${beneficiary.applicationDate}" /></td>
+					</tr>
+					<tr>
+						<td>Capacity</td>
+						<td><input type="text" class="form-control"
+							th:field="${beneficiary.capacity}" /></td>
+					</tr>
+					<tr>
+						<td>Install Location</td>
+						<td><input type="text" class="form-control"
+							th:field="${beneficiary.installLocation}" /></td>
+					</tr>
+					<tr>
+						<td>Payment Amount</td>
+						<td><input type="text" class="form-control"
+							th:field="${beneficiary.payments}" /></td>
+					</tr>
+					<tr>
+						<td>Technology</td>
+						<td><input type="text" class="form-control"
+							th:field="${beneficiary.technology}" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+
+
+</body>
+</html>
