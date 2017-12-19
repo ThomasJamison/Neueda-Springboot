@@ -58,6 +58,10 @@
 				<th>Wind Direction</th>
 				<td th:text="${weather.wind.direction}"></td>
 			</tr>
+			<tr>
+				<th>Outlook</th>
+				<td><img th:src="@{${weather.image}}"/></td>
+			</tr>
 		</tbody>
 	</table>
 
