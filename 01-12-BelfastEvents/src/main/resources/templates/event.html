@@ -19,15 +19,22 @@
 
 
 	<div class="jumbotron" align="center">
-		<h2>Belfast Events</h2>
+		<h2>Event</h2>
 	</div>
 	
 
 
-	<table th:each="event : ${events}" class="table table-bordered table-dark">
+	<table class="table table-bordered table-dark">
 		<tbody>
 			
-
+			<tr>
+				<th>Event ID</th>
+				<td th:text="${event.identifier}"></td>
+			</tr>
+			<tr>
+				<th>Event URL</th>
+				<td th:text="${event.url}"></td>
+			</tr>
 			<tr>
 				<th>Event Title</th>
 				<td th:text="${event.title}"></td>
@@ -52,15 +59,39 @@
 				<th>Venue</th>
 				<td th:text="${event.venue}"></td>
 			</tr>
-
+			<tr>
+				<th>Venue URL</th>
+				<td>
+					<div th:switch="${event.venueUrl}">
+						<p th:case="''" th:text="${event.venue}">Venue has no link</p>
+						<p th:case="*">
+							<a href='' th:href="${event.venueUrl}" th:text="${event.venue}"
+								target="_blank">Venue has a link</a>
+						</p>
+					</div>
+				</td>
+			</tr>
 			<tr>
 				<th>Image</th>
 				<td><img src="" th:src="${event.image}" /></td>
 			</tr>
-
 			<tr>
-				<td colspan="5" align="center"><a class="btn btn-primary" href="#" th:href="@{/} + ${event.identifier}">More Info</a></td>
+				<th>Audience</th>
+				<td th:text="${event.audience}"></td>
 			</tr>
+			<tr>
+				<th>Event Theme</th>
+				<td th:text="${event.theme}"></td>
+			</tr>
+			<tr>
+				<th>Event Cost</th>
+				<td th:text="${event.cost}"></td>
+			</tr>
+			<tr>
+				<th>Event Content</th>
+				<td th:utext="${event.content}"></td>
+			</tr>
+
 
 		</tbody>
 	</table>
