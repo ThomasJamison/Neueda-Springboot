@@ -1,12 +1,18 @@
 package uk.ac.belfastmet.events.domain;
 
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Event
 {
 	private String identifier;
 	private String url;
 	private String title;
-	private String startDate;
-	private String endDate;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date startDate;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date endDate;
 	private String time;
 	private String venue;
 	private String venueUrl;
@@ -21,7 +27,7 @@ public class Event
 		
 	}
 	
-	public Event(String identifier, String url, String title, String startDate, String endDate,
+	public Event(String identifier, String url, String title, Date startDate, Date endDate,
 				 String time, String venue, String venueUrl, String image, String audience,
 				 String theme, String cost, String content)
 	{
@@ -74,22 +80,22 @@ public class Event
 		this.title = title;
 	}
 
-	public String getStartDate()
+	public Date getStartDate()
 	{
 		return startDate;
 	}
 
-	public void setStartDate(String startDate)
+	public void setStartDate(Date startDate)
 	{
 		this.startDate = startDate;
 	}
 
-	public String getEndDate()
+	public Date getEndDate()
 	{
 		return endDate;
 	}
 
-	public void setEndDate(String endDate)
+	public void setEndDate(Date endDate)
 	{
 		this.endDate = endDate;
 	}
