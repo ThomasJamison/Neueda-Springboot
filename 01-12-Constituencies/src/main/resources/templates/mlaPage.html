@@ -21,7 +21,7 @@
 
 
 	<div class="jumbotron" align="center">
-		<h2>Constituency</h2>
+		<h2 th:text="${constituency}"></h2>
 	</div>
 	
 	<a class="btn btn-primary" href="#" th:href="@{/}">Back</a>
@@ -30,20 +30,24 @@
 		<tbody>
 			
 			<tr>
-				<th>Member Name</th>
+				<th>ID</th>
 				<td th:text="${member.personId}"></td>
 			</tr>
 			<tr>
-				<th>Member Name</th>
+				<th>Name</th>
 				<td th:text="${member.memberName}"></td>
 			</tr>
 			<tr>
-				<th>Member Party</th>
+				<th>Party</th>
 				<td th:text="${member.party}"></td>
 			</tr>
 			<tr>
-				<th>Member Name</th>
+				<th>Constituency</th>
 				<td th:text="${member.constituencyId}"></td>
+			</tr>
+			<tr>
+				<th>Picture</th>
+				<td><img src="" th:src="${member.image}" /></td>
 			</tr>
 
 			

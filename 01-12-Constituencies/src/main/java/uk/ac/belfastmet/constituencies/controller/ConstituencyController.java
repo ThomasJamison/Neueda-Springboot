@@ -53,7 +53,8 @@ public class ConstituencyController
 			}
 
 		}
-				
+			
+		model.addAttribute("constituency", requestedMembers.get(0).getConstituencyName());
 		model.addAttribute("members", requestedMembers);
 		return "mlaPage";
 	}

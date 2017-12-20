@@ -39,7 +39,8 @@ public class Member {
 	@JsonProperty("ConstituencyId")
 	private String constituencyId;
 
-
+	@JsonProperty("MemberImgUrl")
+	private String image;
 
 
 
