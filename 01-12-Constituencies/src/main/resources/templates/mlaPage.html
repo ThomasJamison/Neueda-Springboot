@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+
+
+
+	<div class="jumbotron" align="center">
+		<h2>Constituency</h2>
+	</div>
+	
+	<a class="btn btn-primary" href="#" th:href="@{/}">Back</a>
+
+	<table th:each="member : ${members}" class="table table-bordered">
+		<tbody>
+			
+			<tr>
+				<th>Member Name</th>
+				<td th:text="${member.personId}"></td>
+			</tr>
+			<tr>
+				<th>Member Name</th>
+				<td th:text="${member.memberName}"></td>
+			</tr>
+			<tr>
+				<th>Member Party</th>
+				<td th:text="${member.party}"></td>
+			</tr>
+			<tr>
+				<th>Member Name</th>
+				<td th:text="${member.constituencyId}"></td>
+			</tr>
+
+			
+
+
+		</tbody>
+	</table>
+
+<br />
+
+
+
+
+
+</body>
+
+</html>
